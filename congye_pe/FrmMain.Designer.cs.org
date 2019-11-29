@@ -1,0 +1,345 @@
+﻿namespace congye_pe
+{
+    partial class FrmMain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.基础设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.单位维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.设置维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.基础设置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.单位维护ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.StatusTool = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LabPro = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ProBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.TsLabUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TsLabTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
+            this.StatusTool.SuspendLayout();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            pictureBox5 = new System.Windows.Forms.PictureBox();
+            pictureBox6 = new System.Windows.Forms.PictureBox();
+            pictureBox7 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.维护ToolStripMenuItem,
+            this.基础设置ToolStripMenuItem,
+            this.单位维护ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
+            // 
+            // 维护ToolStripMenuItem
+            // 
+            this.维护ToolStripMenuItem.Name = "维护ToolStripMenuItem";
+            this.维护ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.维护ToolStripMenuItem.Text = "维护";
+            // 
+            // 基础设置ToolStripMenuItem
+            // 
+            this.基础设置ToolStripMenuItem.Name = "基础设置ToolStripMenuItem";
+            this.基础设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.基础设置ToolStripMenuItem.Text = "基础设置";
+            // 
+            // 单位维护ToolStripMenuItem
+            // 
+            this.单位维护ToolStripMenuItem.Name = "单位维护ToolStripMenuItem";
+            this.单位维护ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.单位维护ToolStripMenuItem.Text = "单位维护";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.设置维护ToolStripMenuItem,
+            this.基础设置ToolStripMenuItem1,
+            this.单位维护ToolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(125, 70);
+            // 
+            // 设置维护ToolStripMenuItem
+            // 
+            this.设置维护ToolStripMenuItem.Name = "设置维护ToolStripMenuItem";
+            this.设置维护ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.设置维护ToolStripMenuItem.Text = "设置维护";
+            // 
+            // 基础设置ToolStripMenuItem1
+            // 
+            this.基础设置ToolStripMenuItem1.Name = "基础设置ToolStripMenuItem1";
+            this.基础设置ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.基础设置ToolStripMenuItem1.Text = "基础设置";
+            // 
+            // 单位维护ToolStripMenuItem1
+            // 
+            this.单位维护ToolStripMenuItem1.Name = "单位维护ToolStripMenuItem1";
+            this.单位维护ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.单位维护ToolStripMenuItem1.Text = "单位维护";
+            // 
+            // menuStrip1
+            // 
+           
+            // 
+            // StatusTool
+            // 
+            this.StatusTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.LabPro,
+            this.ProBar,
+            this.TsLabUser,
+            this.TsLabTime});
+            this.StatusTool.Location = new System.Drawing.Point(0, 660);
+            this.StatusTool.Name = "StatusTool";
+            this.StatusTool.Size = new System.Drawing.Size(1217, 25);
+            this.StatusTool.TabIndex = 14;
+            this.StatusTool.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.AutoSize = false;
+            this.toolStripStatusLabel1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.toolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(150, 20);
+            this.toolStripStatusLabel1.Text = "使用单位：遂溪县中医院";
+            // 
+            // LabPro
+            // 
+            this.LabPro.AutoSize = false;
+            this.LabPro.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.LabPro.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.LabPro.ForeColor = System.Drawing.Color.Black;
+            this.LabPro.Image = ((System.Drawing.Image)(resources.GetObject("LabPro.Image")));
+            this.LabPro.Name = "LabPro";
+            this.LabPro.Size = new System.Drawing.Size(100, 20);
+            this.LabPro.Text = "准备就绪";
+            // 
+            // ProBar
+            // 
+            this.ProBar.Name = "ProBar";
+            this.ProBar.Size = new System.Drawing.Size(150, 19);
+            // 
+            // TsLabUser
+            // 
+            this.TsLabUser.AutoSize = false;
+            this.TsLabUser.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.TsLabUser.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.TsLabUser.ForeColor = System.Drawing.Color.Black;
+            this.TsLabUser.Image = ((System.Drawing.Image)(resources.GetObject("TsLabUser.Image")));
+            this.TsLabUser.Name = "TsLabUser";
+            this.TsLabUser.Size = new System.Drawing.Size(150, 20);
+            this.TsLabUser.Text = "用户名:admin";
+            // 
+            // TsLabTime
+            // 
+            this.TsLabTime.AutoSize = false;
+            this.TsLabTime.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.TsLabTime.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.TsLabTime.ForeColor = System.Drawing.Color.Black;
+            this.TsLabTime.Image = ((System.Drawing.Image)(resources.GetObject("TsLabTime.Image")));
+            this.TsLabTime.Name = "TsLabTime";
+            this.TsLabTime.Size = new System.Drawing.Size(1187, 20);
+            this.TsLabTime.Spring = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button7
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::congye_pe.Properties.Resources.体检登记2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(282, 126);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::congye_pe.Properties.Resources.结果录入1;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(524, 126);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::congye_pe.Properties.Resources.结论检查;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(766, 126);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::congye_pe.Properties.Resources.数据上传1;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(411, 328);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = global::congye_pe.Properties.Resources.证件打印1;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(167, 328);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.BackgroundImage = global::congye_pe.Properties.Resources.系统维护;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(655, 328);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = global::congye_pe.Properties.Resources.个人中心;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Location = new System.Drawing.Point(899, 328);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(166, 168);
+            this.pictureBox7.TabIndex = 16;
+            this.pictureBox7.TabStop = false;
+            // 
+            // FrmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::congye_pe.Properties.Resources.首页1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1217, 685);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.StatusTool);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("幼圆", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "食品从业人员体检管理系统";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
+            this.StatusTool.ResumeLayout(false);
+            this.StatusTool.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 基础设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 单位维护ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem 设置维护ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 基础设置ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 单位维护ToolStripMenuItem1;
+        private System.Windows.Forms.StatusStrip StatusTool;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        public System.Windows.Forms.ToolStripStatusLabel LabPro;
+        public System.Windows.Forms.ToolStripProgressBar ProBar;
+        private System.Windows.Forms.ToolStripStatusLabel TsLabUser;
+        private System.Windows.Forms.ToolStripStatusLabel TsLabTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+    }
+}

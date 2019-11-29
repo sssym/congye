@@ -1,0 +1,325 @@
+﻿using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+using System.Collections;
+
+
+namespace congye_pe
+{
+    public partial class FrmUser :Form
+    {
+        DbConn dbConn = null;
+        string strSql = "";
+        string str_type = "";
+        ArrayList al = null;
+        SqlDataAdapter sqlDataAdapter = null;
+        DataSet dataSet = null;
+        SqlDataReader sqlDataReader = null;
+        static string str_tjbh = "";
+        public static string str_value = "";
+        private int is_insert = 1;
+        string str_yhqx = "";
+        ClsBase64 clsBase64 = null;
+
+        public FrmUser()
+        {
+            InitializeComponent();
+            dbConn = new DbConn();
+        }
+
+        private void FrmUser_Load(object sender, EventArgs e)
+        {
+            strSql = "select id,yhbm as 编码,yhxm as 用户姓名,yhmm,(case when sfty=1 then '是' else '否' end) as 是否停用 from table_yh ";
+            dbConn.LoadGv(strSql,Gv1);
+            Gv1.Columns[0].Visible = false;
+            Gv1.Columns[3].Visible = false;
+            txt_yhbm.Enabled = false;
+            txt_yhmm.Enabled = false;
+            txt_yhxm.Enabled = false;
+            treeView1.Enabled = false;
+            ckb_sfty.Enabled = false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            is_insert = 1;
+            txt_yhbm.Text = "";
+            txt_yhmm.Text = "";
+            txt_yhxm.Text = "";
+            for (int i = 0; i < treeView1.Nodes.Count; i++)
+            {
+                
+                 treeView1.Nodes[i].Checked = false;
+                if (treeView1.Nodes[i].Nodes.Count != 0)
+                {
+                    for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++)
+                    {
+                        treeView1.Nodes[i].Nodes[j].Checked = false;
+                    }
+                }
+            }
+            //btnSave.Enabled = true;
+            //btnDelete.Enabled = false;
+            //btnEdit.Enabled = false;
+            //btnAdd.Enabled = false;
+            txt_yhxm.Enabled = true;
+            txt_yhmm.Enabled = true;
+            txt_yhbm.Enabled = true;
+            ckb_sfty.Enabled = true;
+            treeView1.Enabled = true;
+            Gv1.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            clsBase64 = new ClsBase64();
+            string str_yhbm = txt_yhbm.Text;
+            string str_yhxm = txt_yhxm.Text;
+            string str_yhmm =clsBase64.Encodebase64( txt_yhmm.Text);
+            string str_sfty = "";
+            string str_yhqx = getCheckString(treeView1);
+           
+            if (ckb_sfty.Checked)
+            {
+                str_sfty = "1";
+            }
+            else
+            {
+                str_sfty = "0";
+            }
+
+            if (is_insert == 1)
+            {
+                strSql = "select count(*) from table_yh where yhbm='" + str_yhbm + "'";
+                sqlDataReader = dbConn.GetDataReader(strSql);
+                if (sqlDataReader.Read())
+                {
+                    if (sqlDataReader.GetValue(0).ToString() != "0")
+                    {
+                        MessageBox.Show("已存在相同的用户编码！");
+                        return;
+                    }
+                }
+                strSql = "insert into table_yh(yhbm,yhxm,yhmm,sfty,yhqx) values('" + str_yhbm + "','" + str_yhxm + "','" + str_yhmm + "','" + str_sfty + "','" + str_yhqx + "')";
+                if (dbConn.GetSqlCmd(strSql) != 0)
+                {
+                    MessageBox.Show("新增保存成功！");
+                }
+            }
+            else
+            {
+                strSql = "select count(*) from table_yh where id!="+label6.Text+"and yhbm='" + str_yhbm + "'";
+                sqlDataReader = dbConn.GetDataReader(strSql);
+                if (sqlDataReader.Read())
+                {
+                    if (sqlDataReader.GetValue(0).ToString() != "0")
+                    {
+                        MessageBox.Show("已存在相同的用户编码！");
+                        return;
+                    }
+                }
+                strSql = "update table_yh set yhbm='"+str_yhbm+"',yhxm='"+str_yhxm+"',yhmm='"+str_yhmm+"',sfty="+str_sfty+",yhqx='"+str_yhqx+"' where id="+label6.Text+"";
+                if (dbConn.GetSqlCmd(strSql) != 0)
+                {
+                    MessageBox.Show("修改保存成功！");
+                }
+            }
+            FrmUser_Load(sender, e);
+            txt_yhbm.Enabled = false;
+            txt_yhmm.Enabled = false;
+            txt_yhxm.Enabled = false;
+            ckb_sfty.Enabled = false;
+            //btnSave.Enabled = false;
+            //btnAdd.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnDelete.Enabled = true;
+            label6.Text = "";
+        }
+
+        private void Gv1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label6.Text = Gv1[0, e.RowIndex].Value.ToString();
+            txt_yhbm.Text = Gv1[1, e.RowIndex].Value.ToString();
+            txt_yhxm.Text = Gv1[2, e.RowIndex].Value.ToString();
+            txt_yhmm.Text = Gv1[3, e.RowIndex].Value.ToString();
+            int n = 0;
+            int m = 0;
+            if (Gv1[4, e.RowIndex].Value.ToString() == "是")
+            {
+                ckb_sfty.Checked = true;
+            }
+            else
+            {
+                ckb_sfty.Checked = false;
+            }
+            strSql = "select yhqx from table_yh where id="+label6.Text;
+            sqlDataReader = dbConn.GetDataReader(strSql);
+            if (sqlDataReader.Read())
+            {
+                str_yhqx = sqlDataReader.GetValue(0).ToString();
+            }
+            for (int i = 0; i < str_yhqx.Length; i++)
+            {
+                if (treeView1.Nodes[n].Nodes.Count == 0)
+                {
+
+                    if (str_yhqx[i] == '1')
+                    {
+                        treeView1.Nodes[n].Checked = true;
+                    }
+                    else { treeView1.Nodes[n].Checked = false; }
+                    n++;
+                }
+                else
+                {
+
+                    if (m < treeView1.Nodes[n].Nodes.Count)
+                    {
+                        if (str_yhqx[i] == '1')
+                        {
+                            treeView1.Nodes[n].Nodes[m].Checked = true;
+                        }
+                        else { treeView1.Nodes[n].Checked = false; }
+                        m++;
+                    }
+                    if (m == treeView1.Nodes[n].Nodes.Count)
+                    { m = 0;n++; }
+
+
+              
+                }
+                
+
+            }
+
+        }
+        private string getCheckString(TreeView tv)
+        {
+            string strCheck = "";
+            for (int i = 0; i < tv.Nodes.Count; i++)
+            {
+                if (tv.Nodes[i].Nodes.Count == 0)
+                {
+                    if (tv.Nodes[i].Checked)
+                    {
+
+                        strCheck = strCheck + "1";
+                    }
+                    else
+                    {
+                        strCheck = strCheck + "0";
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < tv.Nodes[i].Nodes.Count; j++)
+                    {
+                        if (tv.Nodes[i].Nodes[j].Checked)
+                        {
+
+                            strCheck = strCheck + "1";
+                        }
+                        else
+                        {
+                            strCheck = strCheck + "0";
+                        }
+                    }
+                }
+            }
+            return strCheck;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(getCheckString(treeView1));
+        }
+
+        private void btnCanel_Click(object sender, EventArgs e)
+        {
+            //btnAdd.Enabled = true;
+            //btnDelete.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnSave.Enabled = false;
+            txt_yhbm.Text = "";
+            txt_yhmm.Text = "";
+            txt_yhxm.Text = "";
+            ckb_sfty.Checked = false;
+            for (int i = 0; i < treeView1.Nodes.Count; i++)
+            {
+
+                treeView1.Nodes[i].Checked = false;
+                if (treeView1.Nodes[i].Nodes.Count != 0)
+                {
+                    for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++)
+                    {
+                        treeView1.Nodes[i].Nodes[j].Checked = false;
+                    }
+                }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //btnAdd.Enabled = false;
+            //btnDelete.Enabled = false;
+            //btnSave.Enabled = true;
+            //btnDelete.Enabled = false;
+            txt_yhxm.Enabled = true;
+            txt_yhmm.Enabled = true;
+            txt_yhbm.Enabled = true;
+            ckb_sfty.Enabled = true;
+            treeView1.Enabled = true;
+            is_insert = 0;
+            Gv1.Enabled = false;
+
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (label6.Text == null || label6.Text=="")
+            {
+                MessageBox.Show("请选择需要删除的用户！");
+            }
+            else
+            {
+                DialogResult dr1 = MessageBox.Show("将删除用户编码为：" + txt_yhbm.Text + "',用户姓名为：" + txt_yhxm.Text + " 的用户，是否确认？", "警告！", MessageBoxButtons.OKCancel);
+                if (dr1 == DialogResult.OK)
+                {
+                    strSql = "delete from table_yh where id='" + label6.Text + "'";
+                    if (dbConn.GetSqlCmd(strSql) != 0)
+                    {
+                        MessageBox.Show("删除成功！");
+                    }
+                    label6.Text = "";
+                }
+                else
+                {
+                    return;
+                }
+            }
+           
+        }
+
+        private void Gv1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Gv1_CellDoubleClick(sender, e);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}

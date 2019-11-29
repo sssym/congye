@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA2DCD0E-2639-4E8A-BD32-29B5357F52A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>congye_pe</RootNamespace>
+    <AssemblyName>congye_pe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsBase64.cs" />
+    <Compile Include="ClsConnectWebservice.cs" />
+    <Compile Include="CVRSDK.cs" />
+    <Compile Include="DbConn.cs" />
+    <Compile Include="FrmChaKan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChaKan.Designer.cs">
+      <DependentUpon>FrmChaKan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCssz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCssz.Designer.cs">
+      <DependentUpon>FrmCssz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDqtjh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDqtjh.Designer.cs">
+      <DependentUpon>FrmDqtjh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelect.Designer.cs">
+      <DependentUpon>FrmSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectYs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectYs.Designer.cs">
+      <DependentUpon>FrmSelectYs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSjsc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSjsc.Designer.cs">
+      <DependentUpon>FrmSjsc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSjwh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSjwh.Designer.cs">
+      <DependentUpon>FrmSjwh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTjdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTjdj.Designer.cs">
+      <DependentUpon>FrmTjdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJcjl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJcjl.Designer.cs">
+      <DependentUpon>FrmJcjl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTjjglr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTjjglr.Designer.cs">
+      <DependentUpon>FrmTjjglr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVideo.Designer.cs">
+      <DependentUpon>FrmVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVideo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVideo1.Designer.cs">
+      <DependentUpon>FrmVideo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXgmm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXgmm.Designer.cs">
+      <DependentUpon>FrmXgmm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYssz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmYssz.Designer.cs">
+      <DependentUpon>FrmYssz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmZjdy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZjdy.Designer.cs">
+      <DependentUpon>FrmZjdy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsText.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\pe_webservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmChaKan.resx">
+      <DependentUpon>FrmChaKan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCssz.resx">
+      <DependentUpon>FrmCssz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelect.resx">
+      <DependentUpon>FrmSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectYs.resx">
+      <DependentUpon>FrmSelectYs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSjsc.resx">
+      <DependentUpon>FrmSjsc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSjwh.resx">
+      <DependentUpon>FrmSjwh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTjdj.resx">
+      <DependentUpon>FrmTjdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJcjl.resx">
+      <DependentUpon>FrmJcjl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTjjglr.resx">
+      <DependentUpon>FrmTjjglr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVideo.resx">
+      <DependentUpon>FrmVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVideo1.resx">
+      <DependentUpon>FrmVideo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXgmm.resx">
+      <DependentUpon>FrmXgmm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmYssz.resx">
+      <DependentUpon>FrmYssz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmZjdy.resx">
+      <DependentUpon>FrmZjdy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FrmMain.Designer.cs.org" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\pe_webservice\WebserviceCallEntrance.wsdl" />
+    <None Include="Service References\pe_webservice\WebserviceCallEntranceImplService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\体检结果录入.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\体检结果录入_标题.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\体检结果录入1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\检查结论.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\检查结论1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\选择人员.png" />
+    <Content Include="Resources\首页2.png" />
+    <None Include="Resources\选择.png" />
+    <None Include="Resources\证件打印11.png" />
+    <None Include="Resources\证件打印2.png" />
+    <None Include="Resources\个人中心.png" />
+    <Content Include="Resources\体检登记.png" />
+    <None Include="Resources\首页1.png" />
+    <None Include="Resources\证件打印1.png" />
+    <None Include="Resources\体检登记1.png" />
+    <None Include="Resources\体检登记2.png" />
+    <None Include="Resources\体检登记3.png" />
+    <None Include="Resources\体检登记4.png" />
+    <None Include="Resources\体检登记5.png" />
+    <None Include="Resources\体检结果录入 %282%29.png" />
+    <None Include="Resources\体检结果录入 %282%291.png" />
+    <Content Include="Resources\体检结果录入.png" />
+    <None Include="Resources\首页.png" />
+    <None Include="Resources\体检结果录入1.png" />
+    <None Include="Resources\体检结果录入2.png" />
+    <None Include="Resources\图层 1.png" />
+    <None Include="Resources\拍照.png" />
+    <None Include="Resources\同单位保存新增.png" />
+    <None Include="Resources\保存.png" />
+    <None Include="Resources\打印.png" />
+    <None Include="Resources\同单位保存新增1.png" />
+    <None Include="Resources\已审核.png" />
+    <None Include="Resources\审核 %282%29.png" />
+    <None Include="Resources\关闭.png" />
+    <None Include="Resources\审核.png" />
+    <None Include="Resources\保存1.png" />
+    <None Include="Resources\刷新.png" />
+    <None Include="Resources\删除.png" />
+    <None Include="Resources\对比不通过.png" />
+    <None Include="Resources\对比通过.png" />
+    <None Include="Resources\对比不通过1.png" />
+    <None Include="Resources\修改.png" />
+    <None Include="Resources\取消.png" />
+    <None Include="Resources\打开摄像头.png" />
+    <Content Include="Resources\数据上传.png" />
+    <None Include="Resources\登录界面背景.png" />
+    <None Include="Resources\登录.png" />
+    <None Include="Resources\登录界面背景1.png" />
+    <None Include="Resources\数据上传1.png" />
+    <None Include="Resources\登录界面背景2.png" />
+    <None Include="Resources\登录1.png" />
+    <None Include="Resources\登录界面背景3.png" />
+    <None Include="Resources\系统维护.png" />
+    <None Include="Resources\第二代居民身份证读卡.png" />
+    <None Include="Resources\清空.png" />
+    <None Include="Resources\检查结论.png" />
+    <None Include="Resources\检查结论2.png" />
+    <None Include="Resources\检查结论3.png" />
+    <None Include="Resources\查看结果.png" />
+    <None Include="Resources\新增.png" />
+    <None Include="Resources\新增1.png" />
+    <None Include="Resources\添加.png" />
+    <Content Include="Resources\检查结论1.png" />
+    <Content Include="Resources\结果审核.png" />
+    <Content Include="Resources\结果录入.png" />
+    <None Include="Resources\结果查看.png" />
+    <None Include="Resources\结果查看1.png" />
+    <None Include="Resources\结果查看2.png" />
+    <None Include="Resources\结果录入1.png" />
+    <None Include="Resources\结论检查.png" />
+    <None Include="Resources\结果查看3.png" />
+    <None Include="Resources\结果查看4.png" />
+    <Content Include="Resources\背景.jpg" />
+    <Content Include="Resources\背景1.jpg" />
+    <Content Include="Resources\背景2.jpg" />
+    <Content Include="Resources\背景3.jpg" />
+    <Content Include="Resources\证件打印.png" />
+    <None Include="Service References\pe_webservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\pe_webservice\configuration.svcinfo" />
+    <None Include="Service References\pe_webservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\pe_webservice\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
